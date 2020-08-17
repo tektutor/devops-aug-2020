@@ -48,3 +48,6 @@ docker inspect -f "{{ .NetworkSettings.IPAddress }}" ubuntu1
 Finding hostname of a container
 docker exec -it ubuntu1 hostname 
 
+Checking details about docker installation
+docker info
+
