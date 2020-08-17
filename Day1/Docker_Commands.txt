@@ -1,3 +1,6 @@
+Find docker version
+docker --version
+
 Listing all docker images from Local Docker Registry
 docker images
 
@@ -47,4 +50,3 @@ docker inspect -f "{{ .NetworkSettings.IPAddress }}" ubuntu1
 
 Finding hostname of a container
 docker exec -it ubuntu1 hostname 
-
