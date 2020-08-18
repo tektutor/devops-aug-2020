@@ -42,22 +42,27 @@ git reset --hard
 
 ### Listing branches in local repo
 git branch
+
 git branch --list
 
 ### Creating a new branch
 git branch dev-1.0
+
 git checkout -b dev-1.0
 
 ### Switching to an existing branch
 git checkout dev-1.0
+
 git switch dev-1.0
 
 ## Creating a new branch and switching to it
 git checkout -b dev-1.0
+
 git switch -c dev-1.0
 
 ### Checkout remote branch
 git fetch
+
 git checkout -t origin/remote-branch
 
 ### Deleting a local branch
