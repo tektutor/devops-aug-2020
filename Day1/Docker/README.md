@@ -8,6 +8,7 @@ sudo yum-config-manager
     https://download.docker.com/linux/centos/docker-ce.repo
 
 sudo yum install docker-ce docker-ce-cli containerd.io
+
 sudo systemctl enable docker && sudo systemctl start docker
 
 ### Granting regular(non-admin) user to issue docker commands
