@@ -55,7 +55,7 @@ git checkout dev-1.0
 
 git switch dev-1.0
 
-## Creating a new branch and switching to it
+### Creating a new branch and switching to it
 git checkout -b dev-1.0
 
 git switch -c dev-1.0
