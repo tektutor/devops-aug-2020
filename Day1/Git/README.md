@@ -3,7 +3,7 @@
 ### Configuring user name and email in git
 git config --global user.name "Jeganathan Swaminathan"
 
-git config --global user.email "mail2jegan@gmail.com"
+git config --global user.email "jegan@tektutor.org"
 
 ### Listing git configurations
 git config --list
