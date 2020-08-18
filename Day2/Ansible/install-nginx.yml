@@ -1,0 +1,9 @@
+- name: This playbook  will install, configure and deploy a custom web page into nginx web server
+  hosts: all
+  tasks:
+    - name: Install nginx web server into Ubuntu box
+      apt: name=nginx state=latest update_cache=yes
+  
+    - name: Start nginx web server
+      #service: name=nginx state=restarted enabled=true
+      shell: service nginx start
