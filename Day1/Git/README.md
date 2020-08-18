@@ -51,4 +51,5 @@ git branch -d my-branch
 
 ### Deleting a remote branch
 git push origin --delete feature-branch
+
 git push origin :feature-branch
