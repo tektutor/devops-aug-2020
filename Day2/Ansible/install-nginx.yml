@@ -4,6 +4,16 @@
     - name: Install nginx web server into Ubuntu box
       apt: name=nginx state=latest update_cache=yes
   
-    - name: Start nginx web server
+    - name: Create custom web root folder
+      file: path=/var/html state=directory mode=0777
+
+    - name: Configure nginx to support custom web root folder
+      copy: src=default dest=/etc/nginx/sites-available/default
+
+    - name: Restart nginx web server
       #service: name=nginx state=restarted enabled=true
-      shell: service nginx start
+      shell: service nginx restart
+
+    - name: Deploy a custom web page
+      template: src=index.html.j2 dest=/var/html/index.html
+
