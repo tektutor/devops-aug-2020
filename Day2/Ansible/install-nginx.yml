@@ -18,6 +18,11 @@
       #service: name=nginx state=restarted enabled=true
       shell: service nginx restart
 
-    - name: Deploy a custom web page
-      template: src=index.html.j2 dest=/var/html/index.html
+    - name: Retrieve IP address of ansible nodes
+      command: hostname -i
+      register: ip_address
 
+    - debug: var=ip_address
+
+    - name: Deploy a custom web page into remote nginx web server
+      template: src=index.html.j2 dest=/var/html/index.html
