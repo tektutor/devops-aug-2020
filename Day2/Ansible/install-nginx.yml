@@ -1,5 +1,9 @@
 - name: This playbook  will install, configure and deploy a custom web page into nginx web server
   hosts: all
+  vars:
+    - greeting_msg: DevOps!
+    - provisioner_tool: Docker
+    - conf_mgr_tool: Ansible
   tasks:
     - name: Install nginx web server into Ubuntu box
       apt: name=nginx state=latest update_cache=yes
