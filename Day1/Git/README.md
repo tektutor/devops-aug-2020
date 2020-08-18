@@ -3,7 +3,7 @@
 ### Configuring user name and email in git
 git config --global user.name "Jeganathan Swaminathan"
 
-git config --global user.email "mail2jegan@gmail.com"
+git config --global user.email "jegan@tektutor.org"
 
 ### Listing git configurations
 git config --list
@@ -23,6 +23,7 @@ git commit -m "Initial commit."
 
 ### Checking logs
 git log
+git log --oneline --graph
 
 ### Adding git remote repository
 git remote add origin https://github.com/tektutor/devops-aug-2020.git
@@ -45,6 +46,19 @@ git branch --list
 
 ### Creating a new branch
 git branch dev-1.0
+git checkout -b dev-1.0
+
+### Switching to an existing branch
+git checkout dev-1.0
+git switch dev-1.0
+
+## Creating a new branch and switching to it
+git checkout -b dev-1.0
+git switch -c dev-1.0
+
+### Checkout remote branch
+git fetch
+git checkout -t origin/remote-branch
 
 ### Deleting a local branch
 git branch -d my-branch
