@@ -1,0 +1,36 @@
+- name: This playbook will provision ubuntu and centos ansible nodes
+  hosts: localhost
+  tasks:
+    - name: Install Extra Packages for Enterprise Linux
+      yum: name=epel-release state=latest
+   
+    - name: Install Python Package Installation
+      yum: name=python-pip state=latest
+
+    - name: Install docker-py python SDK
+      shell: pip install docker-py
+
+    - name: Remove all existing containers
+      shell: docker rm -f $(docker ps -aq)
+    
+    - name: Provision ubuntu containers
+      docker_container:
+          docker_host: tcp://localhost:4243
+          name: "ubuntu-{{item}}"
+          hostname: "ubuntu-{{item}}"
+          image: "tektutor/ansible-ubuntu"
+          ports:
+             - "2{{item}}:22"
+             - "8{{item}}:80"
+      with_sequence: start=1 end=15 format="%03d"
+
+    - name: Provision centos containers
+      docker_container:
+          docker_host: tcp://localhost:4243
+          name: "centos-{{item}}"
+          hostname: "centos-{{item}}"
+          image: "tektutor/ansible-centos"
+          ports:
+             - "3{{item}}:22"
+             - "9{{item}}:80"
+      with_sequence: start=1 end=15 format="%03d"

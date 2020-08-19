@@ -1,0 +1,11 @@
+- name: This playbook will demonstrate how to use list and navigate list in a loop
+  hosts: ubuntu 
+  vars:
+    - software_tools:
+        - vim
+        - tree
+        - tmux 
+  tasks:
+    - name: Install the list of software utilities
+      apt: name="{{item}}"  state=latest update_cache=yes
+      with_list: "{{software_tools}}" 

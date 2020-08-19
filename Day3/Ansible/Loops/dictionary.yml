@@ -1,0 +1,9 @@
+- name: This playbook will demonstrate use of dictionary variable
+  hosts: centos
+  vars:
+    env:
+      JAVA_HOME: /usr/lib/java/jdk1.8
+      M2_HOME: /usr/share/maven
+  tasks:
+    - debug: msg="{{item.key}} {{item.value}}"
+      with_dict: "{{env}}"
