@@ -21,6 +21,7 @@ docker ps
 
 ### You need to verify if you are able to SSH into the new centos containers
 ssh -p 2003 root@localhost
+
 ssh -p 2004 root@localhost
 
 When you SSH into CentOS containers,  it is expected to allow password less login.
