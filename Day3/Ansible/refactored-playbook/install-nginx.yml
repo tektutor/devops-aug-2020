@@ -1,0 +1,8 @@
+- name: This playbook  will install, configure and deploy a custom web page into nginx web server
+  hosts: all
+  vars_files:
+    - tektutor_vars_files.yml
+  tasks:
+    - include: "install-nginx-{{ansible_distribution|lower}}.yml"
+    - include: "configure-nginx-{{ansible_distribution|lower}}.yml"
+    - include: common-nginx-tasks.yml

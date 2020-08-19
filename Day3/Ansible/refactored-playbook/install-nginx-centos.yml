@@ -1,0 +1,8 @@
+- name: Fix meta https issue by replacing with http url into CentOS box
+  copy: src=epel.repo dest=/etc/yum.repos.d/epel.repo
+
+- name: Install Extra Packages for Enterprise Linux(EPEL) into CentOS box
+  yum: name=epel-release state=latest 
+
+- name: Install nginx web server into CentOS box
+  yum: name=nginx state=latest 

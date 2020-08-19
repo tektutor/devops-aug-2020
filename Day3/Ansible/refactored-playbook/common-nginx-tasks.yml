@@ -1,0 +1,14 @@
+- name: Create custom web root folder
+  file: path=/var/html state=directory mode=0777
+
+- name: Restart nginx web server
+  shell: service nginx restart
+
+- name: Retrieve IP address of ansible nodes
+  command: hostname -i
+  register: ip_address
+
+- debug: var=ip_address
+
+- name: Deploy a custom web page into remote nginx web server
+  template: src=index.html.j2 dest=/var/html/index.html
