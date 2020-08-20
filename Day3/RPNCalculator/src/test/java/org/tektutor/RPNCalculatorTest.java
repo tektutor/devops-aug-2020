@@ -69,7 +69,7 @@ public class RPNCalculatorTest {
 		RPNCalculator rpnCalculator = new RPNCalculator();
 
 		double actualResult  = rpnCalculator.evaluate ( "100 5 * 1000 20 / -" );	
-		double expectedResult = 451;
+		double expectedResult = 450;
 		assertEquals ( expectedResult, actualResult, 0.001 );
 	}
 		
