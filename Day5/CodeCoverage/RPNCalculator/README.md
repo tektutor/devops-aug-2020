@@ -10,6 +10,7 @@ From the terminal, navigate to
 cd devops-aug-2020/Day5/CodeCoverage/RPNCalculator
 
 You may create a jar package as shown below
+
 mvn clean package
 
 At this point, jacoco plugin would have prepared the code coverage report for your project.
